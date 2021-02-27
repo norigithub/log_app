@@ -136,3 +136,6 @@ cache.json
 
 # outputfile
 html/
+
+# samplelog
+sample_log/
