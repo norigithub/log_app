@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>Address Statistics</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/gridjs/dist/gridjs.production.min.js"></script>
+    <script src="astat.js"></script>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav id="navigation" class="outline">
+        <h2>Log List</h2>
+    </nav>
+
+    <div id="statistics" class="outline">
+        <h2>Statistics</h2>
+        <div id="stat-wrapper"></div>
+        <!-- <table>
+        <thead><tr><th>col1</th><th>col2</th><th>col3</th></tr></thead>
+        <tbody id="stat-table"></tbody>
+        </table> -->
+        <canvas id="stat-chart" class="" height="300" width="300"></canvas>
+    </div>
+    <div id="result" class="outline">
+    <h2>Result</h2>
+    <div id="result-wrapper"></div>
+        <!-- <table>
+        <thead><tr><th>col1-addr</th><th>col2-status</th><th>col3-contry</th><th>col4-city</th><th>col5-log</th><th>col6-whois</th></tr></thead>
+        <tbody id="result-table"></tbody>
+        </table> -->
+    </div>
+    <div id="popup" class="popup hide">
+        <span class="close_button">close</span>
+        <pre id="popup-pad">test</pre>
+        <span class="close_button">close</span>
+    </div>
+<script>
+    //Retrieve json.
+    let requestURL = 'result.json';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+        const result = request.response;
+        generateNav(result);
+    };
+    let close_buttons = document.getElementsByClassName("close_button");
+    for (let e of close_buttons){
+        e.addEventListener("click", function(e){
+            e.target.parentNode.classList.add("hide");
+        });
+    }
+</script>
+<footer>
+<ul>
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</li>
+<li>
+This product includes GeoLite2 data created by MaxMind, available from
+<a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+</li>
+</ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span.button{
+    cursor: pointer;
+}
+
+nav#navigation {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav#navigation span{
+    display:inline-block;
+    margin: 2px;
+    border: 1px solid green;
+    font-size: 1.5em;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+div#statistics {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+div#stat-wrapper{
+    width: 50%;
+    display: inline-block;
+}
+div#stat-wrapper table td{
+    padding: 3px;
+}
+
+div#statistics canvas{
+    border: 1px solid blue;
+    display:inline-block;
+    vertical-align: top;
+}
+
+div#result {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+div#result-wrapper table tr:nth-of-type(2n) td{
+    background-color: #f9fafb;
+}
+div#result-wrapper table td{
+    padding-bottom: 3px;
+    border-bottom: 1px solid blue;
+
+}
+
+div#result-wrapper table span{
+    background-color: #7BC496;
+    border: 1px solid #0C9E41;
+    font-size: 1em;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+
+
+div.popup{
+    background: #E5EECC;
+    border: 2px solid #839B24;
+    max-width: 860px;
+    right: 0px;
+    position: absolute;
+}
+
+div.hide{
+    display: none;
+}
+
+span.close_button{
+    border: 1px solid #839B24;
+    display: block;
+    font-size: 2em;
+    color: #FFFFFF;
+    width: 100%;
+    background:#839B24;
+    text-align: center;
+    cursor: pointer;
+}
+
+footer {
+    margin: 13px;
+}
